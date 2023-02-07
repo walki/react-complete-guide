@@ -157,3 +157,12 @@ React is defined in the react and react-dom packages
 We use ReactDOM to create the root of the document, that is being placed.
 
 public/index.html - single file that is being loaded by the browser, entry point to the react ui is injected.
+
+
+## Section 4 - React State and Working with Events
+
+Making Apps interactive and reactive
+
+Handling Events - user events like clicks etc
+And updating the UI and working with changing states
+

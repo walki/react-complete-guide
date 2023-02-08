@@ -4,25 +4,25 @@ import "./ExpenseForm.css";
 export default function ExpenseForm() {
   const [expenseData, setExpenseData] = useState({
     title: "",
-    amount: "0.00",
-    date: "2019-01-01",
+    amount: "",
+    date: "",
   });
 
   const changeHandler = (event) => {
+    setExpenseData((prevData) => {
+      let newData = { ...prevData };
 
-    let newData = { ...expenseData };
+      if (event.target.id === "expense-title") {
+        newData.title = event.target.value;
+      } else if (event.target.id === "expense-amount") {
+        newData.amount = event.target.value;
+      } else if (event.target.id === "expense-date") {
+        newData.date = event.target.value;
+      }
+      console.log(newData);
 
-    if (event.target.id === "expense-title") {
-      newData.title = event.target.value;
-    } else if (event.target.id === "expense-amount") {
-      newData.amount = event.target.value;
-    } else if (event.target.id === "expense-date") {
-      newData.date = event.target.value;
-    }
-
-    setExpenseData(newData);
-    
-    console.log(newData);
+      return newData;
+    });
   };
 
   return (

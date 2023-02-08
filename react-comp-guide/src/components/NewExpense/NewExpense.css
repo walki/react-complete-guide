@@ -22,12 +22,12 @@
 
 .new-expense button:hover,
 .new-expense button:active {
-  background-color: #510674;
-  border-color: #510674;
+  background-color: #003559;
+  border-color: #003559;
 }
 
 .new-expense button.alternative {
-  color: #220131;
+  color: #061a40;
   border-color: transparent;
   background-color: transparent;
 }

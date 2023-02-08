@@ -166,3 +166,4 @@ Making Apps interactive and reactive
 Handling Events - user events like clicks etc
 And updating the UI and working with changing states
 
+Adding Color schemes from https://coolors.co/palettes/popular/monochromatic

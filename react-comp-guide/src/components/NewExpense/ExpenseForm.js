@@ -5,7 +5,7 @@ export default function ExpenseForm() {
   const [expenseData, setExpenseData] = useState({
     title: "",
     amount: "",
-    date: "",
+    date: null,
   });
 
   const changeHandler = (event) => {
@@ -17,7 +17,7 @@ export default function ExpenseForm() {
       } else if (event.target.id === "expense-amount") {
         newData.amount = event.target.value;
       } else if (event.target.id === "expense-date") {
-        newData.date = event.target.value;
+        newData.date = new Date(event.target.value);
       }
       console.log(newData);
 
@@ -25,9 +25,15 @@ export default function ExpenseForm() {
     });
   };
 
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    console.log(expenseData);
+  };
+
   return (
     <>
-      <form>
+      <form onSubmit={submitHandler}>
         <div className="new-expense__controls">
           <div className="new-expense__control">
             <label>Title</label>

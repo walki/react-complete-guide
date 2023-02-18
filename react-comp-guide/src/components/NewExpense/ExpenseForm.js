@@ -5,7 +5,7 @@ export default function ExpenseForm() {
   const [expenseData, setExpenseData] = useState({
     title: "",
     amount: "",
-    date: null,
+    date: "",
   });
 
   const changeHandler = (event) => {
@@ -19,8 +19,7 @@ export default function ExpenseForm() {
       } else if (event.target.id === "expense-date") {
         newData.date = new Date(event.target.value);
       }
-      console.log(newData);
-
+      
       return newData;
     });
   };
@@ -29,6 +28,11 @@ export default function ExpenseForm() {
     event.preventDefault();
 
     console.log(expenseData);
+    setExpenseData({
+      title: "",
+      amount: "",
+      date: null,
+    });
   };
 
   return (
@@ -37,7 +41,12 @@ export default function ExpenseForm() {
         <div className="new-expense__controls">
           <div className="new-expense__control">
             <label>Title</label>
-            <input type="text" id="expense-title" onChange={changeHandler} />
+            <input
+              type="text"
+              id="expense-title"
+              value={expenseData.title}
+              onChange={changeHandler}
+            />
           </div>
           <div className="new-expense__control">
             <label>Amount</label>
@@ -46,6 +55,7 @@ export default function ExpenseForm() {
               id="expense-amount"
               min="0.01"
               step="0.01"
+              value={expenseData.amount}
               onChange={changeHandler}
             />
           </div>
@@ -56,6 +66,7 @@ export default function ExpenseForm() {
               id="expense-date"
               min="2019-01-01"
               max="2025-12-31"
+              value={expenseData.date}
               onChange={changeHandler}
             />
           </div>

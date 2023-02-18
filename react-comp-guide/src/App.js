@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CondContent from "./components/AssignmentTests/CondContent";
 
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
@@ -48,7 +49,9 @@ function App() {
       <NewExpense onAddExpense={addExpenseHandler} />
 
       <Expenses items={expenses} />
+      <CondContent></CondContent>
     </div>
+    
   );
 }
 

@@ -1,16 +1,13 @@
-import React from 'react'
+import React from "react";
 
-import './ExpensesFilter.css';
+import "./ExpensesFilter.css";
 
 const ExpensesFilter = (props) => {
-
   const yearChangeHandler = (event) => {
     const filterYear = event.target.value;
-
     props.onYearChange(filterYear);
-
   };
-  
+
   return (
     <div className="expenses-filter">
       <div className="expenses-filter__control">
@@ -27,9 +24,7 @@ const ExpensesFilter = (props) => {
       </div>
       <div>{props.children}</div>
     </div>
-
-
   );
-}
+};
 
 export default ExpensesFilter;

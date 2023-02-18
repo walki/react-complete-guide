@@ -2,37 +2,36 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 export default function ExpenseForm() {
-  const [expenseData, setExpenseData] = useState({
-    title: "",
-    amount: "",
-    date: "",
-  });
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
 
-  const changeHandler = (event) => {
-    setExpenseData((prevData) => {
-      let newData = { ...prevData };
+  const titleChangeHandler = (event) => {
+    setEnteredTitle(event.target.value);
+  };
 
-      if (event.target.id === "expense-title") {
-        newData.title = event.target.value;
-      } else if (event.target.id === "expense-amount") {
-        newData.amount = event.target.value;
-      } else if (event.target.id === "expense-date") {
-        newData.date = new Date(event.target.value);
-      }
-      
-      return newData;
-    });
+  const amountChangeHandler = (event) => {
+    setEnteredAmount(event.target.value);
+  };
+
+  const dateChangeHandler = (event) => {
+    setEnteredDate(event.target.value);
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
 
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate),
+    };
+
     console.log(expenseData);
-    setExpenseData({
-      title: "",
-      amount: "",
-      date: null,
-    });
+
+    setEnteredTitle("");
+    setEnteredAmount("");
+    setEnteredDate("");
   };
 
   return (
@@ -44,8 +43,8 @@ export default function ExpenseForm() {
             <input
               type="text"
               id="expense-title"
-              value={expenseData.title}
-              onChange={changeHandler}
+              value={enteredTitle}
+              onChange={titleChangeHandler}
             />
           </div>
           <div className="new-expense__control">
@@ -55,8 +54,8 @@ export default function ExpenseForm() {
               id="expense-amount"
               min="0.01"
               step="0.01"
-              value={expenseData.amount}
-              onChange={changeHandler}
+              value={enteredAmount}
+              onChange={amountChangeHandler}
             />
           </div>
           <div className="new-expense__control">
@@ -66,8 +65,8 @@ export default function ExpenseForm() {
               id="expense-date"
               min="2019-01-01"
               max="2025-12-31"
-              value={expenseData.date}
-              onChange={changeHandler}
+              value={enteredDate}
+              onChange={dateChangeHandler}
             />
           </div>
         </div>

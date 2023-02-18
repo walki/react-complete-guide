@@ -31,7 +31,7 @@ export default function CondContent() {
 
 
   return (
-    <div>
+    <div className="cond-cont">
       {alertContent}
       <button onClick={deleteHandler}>Delete</button>
     </div>  

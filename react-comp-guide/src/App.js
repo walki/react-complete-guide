@@ -49,7 +49,6 @@ function App() {
       <NewExpense onAddExpense={addExpenseHandler} />
 
       <Expenses items={expenses} />
-      <CondContent></CondContent>
     </div>
     
   );

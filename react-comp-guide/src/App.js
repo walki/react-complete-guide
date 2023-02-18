@@ -30,10 +30,18 @@ function App() {
     },
   ];
 
+
+  const addExpenseHandler = (addedExpense) => {
+    const newExpense = {
+      ...addedExpense
+    };
+    expenses.push(newExpense);
+  };
+
   return (
     <div>
       <h2>Expense Tracker</h2>
-      <NewExpense></NewExpense>
+      <NewExpense onAddExpense={addExpenseHandler} />
 
       <Expenses items={expenses} />
     </div>

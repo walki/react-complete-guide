@@ -28,7 +28,7 @@ const INITIAL_EXPENSES = [
     id: "e５",
     title: "Brain Extruder",
     amount: 1256.92,
-    date: new Date(2022, 5, 12),
+    date: new Date(2023, 5, 12),
   },
 ];
 

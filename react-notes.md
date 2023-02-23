@@ -167,3 +167,28 @@ Handling Events - user events like clicks etc
 And updating the UI and working with changing states
 
 Adding Color schemes from https://coolors.co/palettes/popular/monochromatic
+
+
+Section 6 - exercise
+```
+import React, { useState} from 'react';
+
+// don't change the Component name "App"
+export default function App() {
+    
+    const [isActive, setActive ] = useState(false);
+    
+    const activeHandler = () => {
+        setActive((isActive) => {
+            return !isActive;
+        })
+    }
+    
+    return (
+        <div>
+            <p className={`${isActive ? 'active' : ''}`}>Style me!</p>
+            <button onClick={activeHandler}>Toggle style</button>
+        </div>
+    );
+}
+```

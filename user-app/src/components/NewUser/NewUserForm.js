@@ -46,7 +46,7 @@ const NewUserForm = (props) => {
             </div>
             <div className="new-user__control">
               <label>Age (Years)</label>
-              <input type="text" onChange={ageChangeHandler} value={userAge} />
+              <input type="number" onChange={ageChangeHandler} value={userAge} min={0} max={140} />
             </div>
           </div>
           <div className="new-user__actions">

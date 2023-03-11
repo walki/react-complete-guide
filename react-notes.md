@@ -210,3 +210,6 @@ export default function App() {
 * Can ust React Portals to move elements to other locations in the DOM
 
 * `refs` References - can set up connections between HTML elements and javascript
+
+## Uncontrolled vs Controlled
+* Is a component is being controlled by React or not. The move to using `refs` to get the value, and set it, is Uncontrolled. Do it only sparingly.

@@ -206,3 +206,7 @@ export default function App() {
 
 
 * There is a library version of the Wrapper, <React.Fragment> or <>
+
+* Can ust React Portals to move elements to other locations in the DOM
+
+* `refs` References - can set up connections between HTML elements and javascript

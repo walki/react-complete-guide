@@ -192,3 +192,17 @@ export default function App() {
     );
 }
 ```
+
+## JSX Limitations
+
+* Adjacent root level elements are not valid. We need a single root.
+* Must be one ring to rule them all...
+* Can't return more than one value from a function, this is where the limitation comes in.
+* It is really React.createElement
+* Use a wrapping `<div>`, then only one, like returning an array, doesn't have to be a div, could be any element
+* Can also use a JavaScript array, React knows how to use it, but the array elements need a key... this becomes cumbersome
+* New problem, <div> Soup! The divs have no semantic meaning other than the JSX limitation
+* Wrapper Component as the solution
+
+
+* There is a library version of the Wrapper, <React.Fragment> or <>

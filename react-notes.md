@@ -213,3 +213,11 @@ export default function App() {
 
 ## Uncontrolled vs Controlled
 * Is a component is being controlled by React or not. The move to using `refs` to get the value, and set it, is Uncontrolled. Do it only sparingly.
+
+
+## useEffect
+* use it when you are interacting with external (non-React) things. 
+* It is dealing with "side effects"
+* Dependencies are the items that we interact wiht the function being called when calling useEffect
+* state variables, and functions
+* don't need to include state setting function, or builtin API, like fetch, localStorage etc.

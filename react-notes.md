@@ -221,3 +221,6 @@ export default function App() {
 * Dependencies are the items that we interact wiht the function being called when calling useEffect
 * state variables, and functions
 * don't need to include state setting function, or builtin API, like fetch, localStorage etc.
+* useEffect can return a cleanup funtion. This can be used to keep synchronized with the external system.
+* If you don't add a dependency list, the useEffect is run on all component evaluations.
+* cleanup function isn't run on the first run, but will run on everyother runs, and when the component is removed from the DOM
